@@ -1,147 +1,511 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lekhasree - Resume</title>
+
+    <title>Lekhasree | Computer Science Graduate</title>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f4f4;
-            color: #333;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.6;
         }
 
-        header {
-            background: #222;
+        /* Navigation */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #111827;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
             color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #60a5fa;
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 50px 20px;
+            background: linear-gradient(135deg, #111827, #2563eb);
+            color: white;
+            padding: 40px 20px;
         }
 
-        header h1 {
-            font-size: 40px;
-            margin: 0;
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
         }
 
-        header p {
-            font-size: 18px;
+        .hero h3 {
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 20px;
         }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: white;
+            color: #111827;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #dbeafe;
+        }
+
+        /* Sections */
 
         section {
-            max-width: 900px;
-            margin: 25px auto;
+            max-width: 1000px;
+            margin: auto;
+            padding: 70px 25px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 35px;
+            color: #111827;
+        }
+
+        .about {
+            text-align: center;
+            font-size: 17px;
+        }
+
+        /* Skills */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill {
+            background: white;
+            padding: 12px 22px;
+            border-radius: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            font-weight: bold;
+        }
+
+        /* Education */
+
+        .education-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .education-card h3 {
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        /* Projects */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
             background: white;
             padding: 30px;
             border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
         }
 
-        h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
+        .project-card h3 {
+            color: #2563eb;
+            margin-bottom: 10px;
         }
 
-        .skills span {
-            display: inline-block;
-            background: #eee;
-            padding: 8px 15px;
-            margin: 5px;
-            border-radius: 5px;
-        }
+        /* Certifications */
 
-        .project {
-            margin-bottom: 25px;
-        }
-
-        .button {
-            display: inline-block;
+        .certifications {
             background: white;
-            color: #222;
-            padding: 12px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 15px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
         }
+
+        .certifications li {
+            margin: 12px 0;
+        }
+
+        /* Contact */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 12px 0;
+            font-size: 17px;
+        }
+
+        .contact a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        /* Footer */
 
         footer {
+            background: #111827;
+            color: white;
             text-align: center;
             padding: 25px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h3 {
+                font-size: 19px;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Lekhasree</h1>
-    <p>Python Developer | Web Developer</p>
+    <!-- Navigation -->
 
-    <a class="button" href="resume 1.pdf" target="_blank">
-        View My Resume
-    </a>
-</header>
+    <nav>
+        <h2>Lekhasree</h2>
 
-<section>
-    <h2>About Me</h2>
-    <p>
-        I am a passionate developer interested in Python,
-        web development, Django and emerging technologies.
-    </p>
-</section>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<section>
-    <h2>Skills</h2>
 
-    <div class="skills">
-        <span>Python</span>
-        <span>Django</span>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>SQL</span>
-        <span>Git</span>
-        <span>GitHub</span>
-    </div>
-</section>
+    <!-- Hero -->
 
-<section>
-    <h2>Projects</h2>
+    <header class="hero">
 
-    <div class="project">
-        <h3>Online Counseling System</h3>
-        <p>
-            A Django-based counseling system with appointment
-            booking, chat, video calls and chatbot integration.
+        <div>
+
+            <h1>Lekhasree</h1>
+
+            <h3>Computer Science Graduate | Python & Django Developer</h3>
+
+            <p>
+                Passionate Computer Science graduate with a strong foundation
+                in Python, Django and web development. Interested in solving
+                problems, learning new technologies and contributing to
+                challenging projects.
+            </p>
+
+            <a class="btn" href="resume%201.pdf" target="_blank">
+                View My Resume
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- About -->
+
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <p class="about">
+            I am a passionate Computer Science graduate with a strong
+            foundation in Python, Django and web development. I have
+            excellent problem-solving, teamwork, communication and
+            time-management skills. I am looking for an opportunity to
+            contribute my technical skills and grow in a challenging
+            environment.
         </p>
-    </div>
 
-    <div class="project">
-        <h3>Blockchain Voting System</h3>
+    </section>
+
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+        <h2>Skills</h2>
+
+        <div class="skills">
+
+            <div class="skill">Python</div>
+            <div class="skill">Django</div>
+            <div class="skill">SQL</div>
+            <div class="skill">MongoDB</div>
+            <div class="skill">Excel</div>
+            <div class="skill">React JS</div>
+            <div class="skill">Flutter</div>
+            <div class="skill">Django REST Framework</div>
+            <div class="skill">Problem Solving</div>
+            <div class="skill">Communication</div>
+            <div class="skill">Teamwork</div>
+            <div class="skill">Adaptability</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Education -->
+
+    <section id="education">
+
+        <h2>Education</h2>
+
+        <div class="education-card">
+
+            <h3>M.Sc. Computer Science</h3>
+
+            <p>
+                Sacred Heart College (Autonomous), Tirupattur
+            </p>
+
+            <p>
+                Thiruvalluvar University | 2023 - 2025
+            </p>
+
+            <strong>78%</strong>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>B.Sc. Computer Science</h3>
+
+            <p>
+                Marudhar Kesari Jain College for Women, Tirupattur
+            </p>
+
+            <p>
+                Thiruvalluvar University | 2020 - 2023
+            </p>
+
+            <strong>75%</strong>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>HSC</h3>
+
+            <p>
+                Vaani Matric. Hr. Sec. School, Vaniyambadi
+            </p>
+
+            <p>
+                State Board | 2019 - 2020
+            </p>
+
+            <strong>80%</strong>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>SSLC</h3>
+
+            <p>
+                Vailankanni Matric. Hr. Sec. School, Bargur
+            </p>
+
+            <p>
+                State Board | 2017 - 2018
+            </p>
+
+            <strong>79%</strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="projects">
+
+            <div class="project-card">
+
+                <h3>Online Counseling System</h3>
+
+                <p>
+                    A web-based counseling system developed using
+                    Python and Django to support online counseling
+                    and communication.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Finding the Nearest Medical Shop</h3>
+
+                <p>
+                    A project focused on helping users find the
+                    nearest medical shop.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Certifications -->
+
+    <section id="certifications">
+
+        <h2>Certifications & Training</h2>
+
+        <div class="certifications">
+
+            <ul>
+
+                <li>Internship in Django</li>
+
+                <li>Data Science Course</li>
+
+                <li>React JS</li>
+
+                <li>Flutter</li>
+
+                <li>Django REST Framework</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <h2>Contact Me</h2>
+
+        <div class="contact">
+
+            <p>
+                📧
+                <a href="mailto:rlekha1902@gmail.com">
+                    rlekha1902@gmail.com
+                </a>
+            </p>
+
+            <p>
+                📱 +91 8825826221
+            </p>
+
+            <p>
+                📍 Tirupattur, Tamil Nadu
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
         <p>
-            A blockchain-based voting system focusing on
-            security and scalability.
+            © 2026 Lekhasree | Portfolio Resume
         </p>
-    </div>
-</section>
 
-<section>
-    <h2>Education</h2>
-    <p>
-        Add your degree and college details here.
-    </p>
-</section>
-
-<section>
-    <h2>Contact</h2>
-    <p>Email: your-email@example.com</p>
-    <p>GitHub: Add your GitHub profile</p>
-    <p>LinkedIn: Add your LinkedIn profile</p>
-</section>
-
-<footer>
-    <p>© 2026 Lekhasree. All Rights Reserved.</p>
-</footer>
+    </footer>
 
 </body>
+
 </html>
